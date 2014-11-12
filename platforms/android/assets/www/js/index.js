@@ -1,5 +1,5 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
+
+ /* Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
  * regarding copyright ownership.  The ASF licenses this file
@@ -18,7 +18,6 @@
  */
 
 var ejemplo;
-var httpReq;
 var estado;
 var imagenBombilla;
 var dominio = "http://raspberrypilights.ddns.net";
@@ -30,27 +29,19 @@ document.addEventListener('volumedownbutton', apagarLuces(), false);*/
 
 function onDeviceReady() {
 
-
-   /* var imagenCabecera = $('<img />', {
-                        id: 'imagenCabecera',
-                        class: 'imagenCabecera',
-                        src: 'img/logo/logo-texto.png'}).appendTo($('#cabecera'));
-
     var imagenGoogle = $('<img />', {
                         id: 'imagenGoogle',
                         class: 'imagenGoogle',
-                        src: 'img/recursos/google.png'}).appendTo($('#cabecera')); 
-*/
+                        src: 'img/recursos/google.png'});
+
    
     estado = false;
-
-    $('#footer')[0].innerHTML = "<p>RaspberryPiLights® es una aplicación original de Guillermo Rivero Rodríguez</p>";
 
     var url = dominio + "/luces/estado";
     
     var imagenBombilla = $('<img />',
              { id: 'imagenBombilla',
-               src: 'img/recursos/cargando1.gif'}).appendTo($('#cuerpo'));
+               src: 'img/recursos/cargando1.gif'}).appendTo($('#divImagenBombilla'));
 
 
     $.getJSON(url, function( data ) {
@@ -66,10 +57,6 @@ function onDeviceReady() {
             }
         });
     });
-
-    httpReq = new plugin.HttpRequest();
-
-
     
     $('#imagenBombilla').click(function(e){
         switch(estado){
@@ -82,7 +69,7 @@ function onDeviceReady() {
         }
     });
 
-     $('#imagenGoogle').click(function(e){
+     $('#identificate').click(function(e){
         googleapi.authorize({
             client_id: '352839649794-48vvroe4jnegqrfspd0m4tdq7bjqp9po.apps.googleusercontent.com',
             redirect_uri: 'http://localhost',
@@ -106,8 +93,8 @@ function onDeviceReady() {
         });
 
     });
-
 };
+
 
 function encenderLuces(){
 
@@ -152,6 +139,7 @@ function apagarLuces(){
         alert("Fallo al conectar al servidor");
     });
 };
+
 
 
 

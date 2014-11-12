@@ -18,16 +18,42 @@
  */
 
 
-body {
-    display: inline-block;
-    background: -webkit-radial-gradient(white, black);
+html {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background: #feffff; /* Old browsers */
+    background: -moz-linear-gradient(top,  #feffff 0%, #ddf1f9 35%, #0080e2 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#feffff), color-stop(35%,#ddf1f9), color-stop(100%,#0080e2)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #feffff 0%,#ddf1f9 35%,#0080e2 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #feffff 0%,#ddf1f9 35%,#0080e2 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #feffff 0%,#ddf1f9 35%,#0080e2 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #feffff 0%,#ddf1f9 35%,#0080e2 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feffff', endColorstr='#0080e2',GradientType=0 ); /* IE6-9 */
+
+
+    background-attachment:fixed;
+    font-family: 'Pacifico', cursive;
+    font-size:0.75em;
+    color: #000000;
+    height:100%;
+    margin:0em;
+    padding:0em;
+    width:100%;
+
 }
 
 /* Portrait layout (default) */
 .cabecera{
     display: inline-block;
+    text-align: center;
     width:100%;
     }
+
+.imagenCabecera{
+    width: 50%;
+    position:relative;
+}
 
 .imagenGoogle {
     width: 50px;
@@ -38,30 +64,43 @@ body {
 
 
 .cuerpo {
-    width:100%;
-    height:120%;
     position:relative;
-    display:inline-block;
-    overflow:hidden;
+    height: 90%;
 }
 
-.cuerpo > img {
-    position:relative;
-    top:0%;
-    width:75%;
-    height:75%;
+.center{
+    width: 100%;
+    text-align: center;
+}
+
+.cuerpo > p {
+    width:90%;
+    margin-left: 5%;
+    text-align: justify;
+}
+
+a:link {
+    color: #a90329;
+}
+
+/* visited link */
+a:visited {
+    color: #6d0019;
+}
+    
+
+#imagenBombilla{
+    max-height:75%;
     min-height:30%;
-    display:block;
-    left:50%;
-    -webkit-transform: translate(-50%, 0%);
     min-width:30%;
 }
+
 
 .footer {
     margin-bottom: 4px;
     text-align: center;
     font-size: 5px;
-    color: white;
+    color: #000000;
 }
 
 
